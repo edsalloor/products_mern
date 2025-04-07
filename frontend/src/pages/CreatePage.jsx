@@ -1,20 +1,32 @@
-import { useColorModeValue } from '@chakra-ui/react'
-import React from 'react'
+import React from 'react';
+import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from '@chakra-ui/react';
 
-import { Box, Button, Container, Heading, Input, VStack } from '@chakra-ui/react'
-import { useProductStore } from '../store/product'
-import { useToast } from '@chakra-ui/react'
+import { useProductStore } from '../store/product';
+import { isValidProduct } from '../utils/productUtils';
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = React.useState({
     name: '',
     price: '',
-    image: ''
+    image: '',
+    stock: ''
   })
 
   const toast = useToast()
   const { createProduct } = useProductStore()
+
   const handleAddProduct = async () => {
+    const { isValid, message: errorMessage } = isValidProduct(newProduct);
+    if (!isValid) {
+      toast({
+        title: "Error",
+        description: errorMessage,
+        status: "error",
+        isClosable: true
+      })
+      return;
+    }
+
     const {success, message} = await createProduct(newProduct)
     if (!success) {
       toast({
@@ -22,16 +34,16 @@ const CreatePage = () => {
         description: message,
         status: "error",
         isClosable: true
-      })
+      });
     } else {
       toast({
         title: "Success",
         description: message,
         status: "success",
         isClosable: true
-      })
+      });
+      setNewProduct({name: '', price: '', image: '', stock: ''});
     }
-    setNewProduct({name: '', price: '', image: ''})
   }
 
   return <Container maxW={"container.sm"}>
@@ -59,6 +71,13 @@ const CreatePage = () => {
             name='image' 
             value={newProduct.image} 
             onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })} 
+          />
+          <Input
+            placeholder='Stock'
+            name='stock' 
+            type='number'
+            value={newProduct.stock} 
+            onChange={(e) => setNewProduct({ ...newProduct, stock: e.target.value })} 
           />
           <Button colorScheme={"blue"} w={"full"} onClick={handleAddProduct}>
             Add Product
