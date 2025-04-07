@@ -1,9 +1,8 @@
-import { Container, Flex, Text, HStack, Button, useColorMode, useColorModeValue } from "@chakra-ui/react"
-import { Link } from "react-router-dom"
-
 import { PlusSquareIcon } from "@chakra-ui/icons";
+import { Container, Flex, Text, HStack, Button, useColorMode } from "@chakra-ui/react";
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -37,4 +36,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

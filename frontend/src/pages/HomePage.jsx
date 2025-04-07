@@ -1,15 +1,15 @@
-import { Container, VStack, Text, SimpleGrid } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
-import ProductCard from '../components/ProductCard'
-import { useProductStore } from '../store/product.js'
-import { useEffect } from 'react'
+import { Container, VStack, Text, SimpleGrid } from "@chakra-ui/react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import ProductCard from "../components/ProductCard";
+import { useProductStore } from "../store/product.js";
 
 const HomePage = () => {
-
-  const { fetchProducts, products } = useProductStore()
+  const { fetchProducts, products } = useProductStore();
 
   useEffect(() => {
-    fetchProducts()
+    fetchProducts();
   }, [fetchProducts])
 
   return (
@@ -46,4 +46,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage;

@@ -1,17 +1,16 @@
-import React from 'react';
-import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from "@chakra-ui/react";
+import { useState } from "react";
 
-import { useProductStore } from '../store/product';
-import { isValidProduct } from '../utils/productUtils';
+import { useProductStore } from "../store/product";
+import { isValidProduct } from "../utils/productUtils";
 
 const CreatePage = () => {
-  const [newProduct, setNewProduct] = React.useState({
-    name: '',
-    price: '',
-    image: '',
-    stock: ''
+  const [newProduct, setNewProduct] = useState({
+    name: "",
+    price: "",
+    image: "",
+    stock: ""
   })
-
   const toast = useToast()
   const { createProduct } = useProductStore()
 
@@ -42,7 +41,7 @@ const CreatePage = () => {
         status: "success",
         isClosable: true
       });
-      setNewProduct({name: '', price: '', image: '', stock: ''});
+      setNewProduct({name: "", price: "", image: "", stock: ""});
     }
   }
 
@@ -54,28 +53,28 @@ const CreatePage = () => {
       <Box w={"full"} bg={useColorModeValue("white", "gray.800")} p={6} rounded={"lg"} shadow={"md"}>
         <VStack spacing={4}>
           <Input
-            placeholder='Product Name'
-            name='name' 
+            placeholder="Product Name"
+            name="name" 
             value={newProduct.name} 
             onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })} 
           />
           <Input
-            placeholder='Price'
-            name='price' 
-            type='number'
+            placeholder="Price"
+            name="price" 
+            type="number"
             value={newProduct.price} 
             onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })} 
           />
           <Input
-            placeholder='Image URL'
-            name='image' 
+            placeholder="Image URL"
+            name="image" 
             value={newProduct.image} 
             onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })} 
           />
           <Input
-            placeholder='Stock'
-            name='stock' 
-            type='number'
+            placeholder="Stock"
+            name="stock" 
+            type="number"
             value={newProduct.stock} 
             onChange={(e) => setNewProduct({ ...newProduct, stock: e.target.value })} 
           />
@@ -88,4 +87,4 @@ const CreatePage = () => {
   </Container>
 }
 
-export default CreatePage
+export default CreatePage;
