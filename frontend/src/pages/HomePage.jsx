@@ -18,7 +18,7 @@ const HomePage = () => {
         <Text
           fontSize={"30"}
           fontWeight={"bold"}
-          bgGradient={"linear(to-r, cyan.400, blue.500)"}
+          bgGradient={"linear(to-r,rgb(238, 34, 34),rgb(209, 4, 220))"}
           bgClip={"text"}
           textAlign={"center"}>
           Current Products 🚀
