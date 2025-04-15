@@ -8,7 +8,6 @@ const QuoteOfTheDay = () => {
 
   useEffect(() => {
     const fetchQuote = async () => {
-        console.log(NINJAS_API_KEY);
       const response = await fetch("https://api.api-ninjas.com/v1/quotes", {
         method: "GET",
         headers: {
