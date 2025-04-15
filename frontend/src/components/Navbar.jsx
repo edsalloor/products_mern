@@ -1,7 +1,8 @@
-import { PlusSquareIcon } from "@chakra-ui/icons";
 import { Container, Flex, Text, HStack, Button, useColorMode } from "@chakra-ui/react";
 import { IoMoon } from "react-icons/io5";
-import { LuSun } from "react-icons/lu";
+import { LuSun, LuFileSpreadsheet  } from "react-icons/lu";
+import { MdOutlineAddBox } from "react-icons/md";
+import { TiShoppingCart } from "react-icons/ti";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -23,16 +24,21 @@ const Navbar = () => {
 
         <HStack spacing={2} alignItems={"center"}>
           <Link to={"/"}>
-            <Button>🛒 Store</Button>
+            <Button>
+              <TiShoppingCart size={22} style={{"margin-right": "5px"}} /> Store
+            </Button>
           </Link>
           <Link to={"/create"}>
             <Button>
-              <PlusSquareIcon fontSize={20} mr="5px" />
+              <MdOutlineAddBox size={22} style={{"margin-right": "5px"}} />
               Add Product
             </Button>
           </Link>
           <Link to={"/about"}>
-            <Button>About</Button>
+            <Button>
+              <LuFileSpreadsheet size={20} style={{"margin-right": "5px"}} />
+              About
+            </Button>
           </Link>
           <Button onClick={toggleColorMode}>
             {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
