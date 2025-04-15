@@ -1,4 +1,5 @@
 import { Container, Flex, Text, HStack, Button, useColorMode } from "@chakra-ui/react";
+import { CiPen } from "react-icons/ci";
 import { IoMoon } from "react-icons/io5";
 import { LuSun, LuFileSpreadsheet  } from "react-icons/lu";
 import { MdOutlineAddBox } from "react-icons/md";
@@ -25,19 +26,25 @@ const Navbar = () => {
         <HStack spacing={2} alignItems={"center"}>
           <Link to={"/"}>
             <Button>
-              <TiShoppingCart size={22} style={{"margin-right": "5px"}} /> Store
+              <TiShoppingCart size={22} style={{"marginRight": "5px"}} /> Store
             </Button>
           </Link>
           <Link to={"/create"}>
             <Button>
-              <MdOutlineAddBox size={22} style={{"margin-right": "5px"}} />
+              <MdOutlineAddBox size={22} style={{"marginRight": "5px"}} />
               Add Product
             </Button>
           </Link>
           <Link to={"/about"}>
             <Button>
-              <LuFileSpreadsheet size={20} style={{"margin-right": "5px"}} />
+              <LuFileSpreadsheet size={20} style={{"marginRight": "5px"}} />
               About
+            </Button>
+          </Link>
+          <Link to={"/quote"}>
+            <Button>
+              <CiPen size={20} style={{"marginRight": "5px"}} />
+              Quote
             </Button>
           </Link>
           <Button onClick={toggleColorMode}>
