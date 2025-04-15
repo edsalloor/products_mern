@@ -106,7 +106,7 @@ const ProductCard = ({ product }) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Edit Product</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack spacing={4}>
