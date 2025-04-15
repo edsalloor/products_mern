@@ -4,8 +4,9 @@
 
 ### Run backend and fronend in 1 terminal
 
-1. Create an `.env` file **INSIDE** the `backend/` subdirectory and paste the project secrets.
-2. Open a terminal and move to the root folder of the project.
+1. Create an `.env` file **INSIDE** the `backend/` subdirectory and paste the backend secrets.
+2. Create an `.env` file **INSIDE** the `frontend/` subdirectory and paste the frontend secrets.
+3. Open a terminal and move to the root folder of the project.
 4. Run `npm run install-all`.
 5. Run `npm run dev`. You should see an output similar to this:
 ```
@@ -19,23 +20,25 @@
 [0] Server started at http://localhost:5000
 [0] MongoDB Connected: fullstackwebdevelopment-shard-00-02.0ue2g.mongodb.net
 ```
-5. Now you can open http://localhost:5173/ in a browser.
+
+Now you can open http://localhost:5173/ in a browser.
 
 
 ### Run backend and frontend in 2 separate terminals
 
-1. Create an `.env` file **INSIDE** the `backend/` subdirectory and paste the project secrets.
-2. Open two terminals. One for running the backend and the second one for the frontend.
-3. In the first terminal, move to the backend folder of the project: `cd <path-to-products_mern>/backend`.
-4. Run `npm install` and `npm run dev`. You should see an output similar to this:
+1. Create an `.env` file **INSIDE** the `backend/` subdirectory and paste the backend secrets.
+2. Create an `.env` file **INSIDE** the `frontend/` subdirectory and paste the frontend secrets.
+3. Open two terminals. One for running the backend and the second one for the frontend.
+4. In the first terminal, move to the backend folder of the project: `cd <path-to-products_mern>/backend`.
+5. Run `npm install` and `npm run dev`. You should see an output similar to this:
 ```
 [nodemon] starting `node server.js`
 Server started at http://localhost:5000
 MongoDB Connected: fullstackwebdevelopment-shard-00-00.0ue2g.mongodb.net
 ```
 
-5. In the second terminal, move to the frontend folder of the project: `cd <path-to-products_mern>/frontend/`.
-6. Run `npm install` and `npm run dev`. You should see an output similar to this:
+6. In the second terminal, move to the frontend folder of the project: `cd <path-to-products_mern>/frontend/`.
+7. Run `npm install` and `npm run dev`. You should see an output similar to this:
 ```
   VITE v6.1.0  ready in 207 ms
 
@@ -44,4 +47,4 @@ MongoDB Connected: fullstackwebdevelopment-shard-00-00.0ue2g.mongodb.net
   ➜  press h + enter to show help
 ```
 
-7. Now you can open [http://localhost:5173/](http://localhost:5173/) in a browser.
+Now you can open [http://localhost:5173/](http://localhost:5173/) in a browser.
