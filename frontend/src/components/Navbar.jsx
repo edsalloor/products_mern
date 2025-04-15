@@ -22,10 +22,17 @@ const Navbar = () => {
         </Text>
 
         <HStack spacing={2} alignItems={"center"}>
+          <Link to={"/"}>
+            <Button>🛒 Store</Button>
+          </Link>
           <Link to={"/create"}>
             <Button>
-              <PlusSquareIcon fontSize={20} />
+              <PlusSquareIcon fontSize={20} mr="5px" />
+              Add Product
             </Button>
+          </Link>
+          <Link to={"/about"}>
+            <Button>About</Button>
           </Link>
           <Button onClick={toggleColorMode}>
             {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
